@@ -1,4 +1,140 @@
 
+
+def findAllAnagramsinString(String s,String p):
+
+    dic1,dict2 = dict(), dict()
+
+    for i in range(len(p)):
+        dic1 = dict1.get(p[i],0) + 1
+
+    start, end = 0,0
+
+    while end < len(s):
+
+        dict2 = dict2.get(s[end], 0) + 1
+
+        if dic1 == dic2:
+            res.append(start)
+
+        if end - start + 1 > len(p):
+            dic2[s[start]] -= 1
+            if dict2[s[start]] == 0:
+                del(dic2[s[start]])
+            start += 1
+    return res
+
+def groupAnagram(self, strs):
+
+    map = {}
+
+    for str in strs:
+        target = ''.join(sorted(str))
+
+    if target not in map:
+        map[target] = [v]
+
+    else:
+        map[target].append(v)
+
+    for value in map.values():
+        res += [value]
+
+def numberofIslands(self, nums):
+
+
+
+
+
+
+
+
+
+
+
+
+
+def courseSchedule(self, numCourses, prerequistes):
+
+
+    graph = [[] for _ in range(numCourses)]
+    visited = [0 for _ in range(numCourses)]
+
+    for x,y in prerequistes:
+        graph[x].append(y)
+
+    def dfs(i)
+
+        if visited[i] == -1:
+            return False
+
+        if visited[i] == 1:
+            return True
+
+        visited[i] =  -1
+        for i in range(numCourses):
+            if not dfs(i):
+                return False
+        visited[i] = 1
+        return True
+
+
+class Solution(object):
+    def depthSumInverse(self, nestedList):
+        """
+        :type nestedList: List[NestedInteger]
+        :rtype: int
+        """
+        if nestedList is None or len(nestedList) == 0:
+            return 0
+        h = self.getHeight(nestedList)
+        res = self.getSum(nestedList, h)
+        return res
+
+    def getHeight(self, nestedList):
+
+        if nestedList is None or len(nestedList) == 0:
+            return 0
+        height = 0
+        for l in nestedList:
+            if l.isInteger():
+                height = max(height, 1)
+            else:
+                height =  max(height, self.getHeight(l.getList()) + 1)
+        return height
+
+    def getSum(self, nestedList, layer):
+        _sum = 0
+        for l in nestedList:
+            if l.isInteger():
+                _sum += l.getInteger() * layer
+            else:
+                _sum += self.getSum(l.getList(), layer - 1)
+        return _sum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def 4sum(self, nums):
 
     left = 0
