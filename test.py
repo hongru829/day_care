@@ -1,5 +1,54 @@
 
 
+
+def maxBinarySearchTree(self, root):
+
+
+    self.res = float('-inf')
+    self.temp = 0
+
+
+
+    dfs(root):
+        if root is None:
+            return 0
+
+        left = dfs(root.left)
+        right = dfs(root.right)
+        self.temp = max(left + root.val, right + root.val)
+        self.res = max(self.res, self.temp, root.val + left + right)
+
+        reru
+
+
+
+
+
+
+
+
+def maxPathOnBinarySearchTree(self, root)
+
+
+    self.res = float('-inf')
+
+    dfs(root):
+
+
+        left = dfs(root.left)
+        right = dfs(root.right)
+
+        self.temp = max(left + root.val, right + root.val, root.val)
+        self.res = max(self.res, temp, left + right + root.val)
+
+
+        return self.res
+
+
+
+
+
+
 def findAllAnagramsinString(String s,String p):
 
     dic1,dict2 = dict(), dict()
