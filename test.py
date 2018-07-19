@@ -1,6 +1,81 @@
 
 
 
+# longest consecutive sequence
+
+# dp[i] means in the position i-1 the length of longest consecutive subsequence
+
+
+
+def getLongestConsecutuiveSubsequence(self, nums):
+
+    # 1, 4, 3, 8
+
+    dp = [0 for _ in range(len(nums))]
+    dp[0] = 1
+
+    length = [0 for _ in range(len(nums))]
+
+    for i in range(1, len(nums)):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                dp[i] = max(dp[i], dp[j] + 1)
+                maxRes = max(maxRes, dp[i])
+
+    return maxRes
+
+
+
+
+
+import Collections
+def removeInvalidParenters(self, s):
+    deQueue = Collections.deque
+
+    deQueue.append(s)
+    result = []
+    visited = set()
+    isStop = False
+
+    while queue:
+
+        size = len(queue)
+
+        for k in range(len(size)):
+            currentStr = queue.pop()
+
+            if self.checkValid(currentStr):
+                isStop == True
+                res.append(currentStr)
+
+            if isStop:
+                break
+            for i in range(currentStr):
+                if currentStr[i] == ')' or currentStr[i] == '(':
+                    nextStr = currentStr[:i] + currentStr[i+1:]
+
+                    if nextStr not in visited:
+                        deQueue.appendLeft(nextStr)
+                        visited.add(nextStr)
+
+    if len(result) == 0:
+        return [""]
+    else:
+        return result
+
+def checkValid(self, s):
+    counter = 0
+    for i in range(len(s)):
+        if counter < 0:
+            return False
+        if s[i] == '(':
+            counter += 1
+        else:
+            counter -= 1
+    return counter == 0
+
+
+
 def maxBinarySearchTree(self, root):
 
 
