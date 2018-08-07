@@ -1,9 +1,350 @@
 
 
 
+def busRoutes(self, routes, S, T):
+
+    busToStop = {}
+
+    for route in routes:
+        for i in range(len(route))
+            if route[i] not in busToStop:
+                busToStop[route[i]] = []
+                busToStop[route[i]].append(i)
+            else:
+                busToStop[route[i]].append(i)
+    print busToStop
+
+    queue.append(S)
+    visited = set()
+    visited.add(S)
+    countBus = 0
+    while queue:
+        size = len(queue)
+        for k in range(size):
+            nextBus = queue.pop(0)
+            if nextBus == T:
+                return countBus
+
+            countBus += 1
+            stopContainsthisBus = busToStop[nextBus]
+            for stop in stopContainsthisBus:
+                for bus in routes[stop]
+                    if bus not in visited:
+                        queue.append(bus)
+                        visited.add(bus)
+    return -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def openLock(self, deadends, target):
+
+    start = '0000'
+    if start in deadends:
+        return -1
+
+    queue = [start]
+    // 0, 1, 2, 3  9
+
+    while queue:
+
+        size = len(queue)
+
+        for k in range(size):
+            nextPoint = queue.pop(0)
+
+            for i in nextPoint:
+                for j in range(-1, 2, 2):
+                    // ( 0 + 10 + -1 ) % 10 == 9
+                    //
+                    updatedNumber = ( int(i) + 10 + j ) % 10
+                    updatedPoints = nextPoints[:i] + str(j) + nextPoints[i+1:]
+                    if updatedPoints in deadends and updatedPoints in visited:
+                        continue
+                    queue.append(updatedPoints)
+                    visited.add(updatedPoints)
+
+def isBipartite(self, graph):
+
+    color = {}
+
+    for node in range(len(graph)):
+
+        if node not in color:
+            color[node] =  1
+            queue.append(node)
+
+            while queue:
+                size = len(queue)
+                for k in range(size):
+                    nextNode = queue.pop(0)
+                    for nei in graph[nextNode]:
+                        if nei not in color:
+                            queue.append(nei)
+                            color[nei] = color[nextNode] ^ 1
+                        elif color[nei] == color[nextNode]:
+                            return False
+
+        return True
+
+def findCheapestPrice(self, n, flights, src, dst, K):
+
+    graph = {}
+    for flight in flights:
+        if flight not in graph:
+            graph[flight[0]] = []
+            graph[flight[0]].append([flight[1], flight[2]])
+        else:
+            graph[flight[0]].append([fligh[1], flight[2]])
+
+    # first elements means stop
+    queue = [(src, 0)]
+    result = float('inf')
+
+    while queue:
+        size = len(queue)
+        for k in range(size):
+            city, cost = queue.pop(0)
+            if city == dst:
+                return cost
+            nextStopList = graph[city]
+            if nextStopList is None:
+                return -1
+
+            for nextStop in nextStopList:
+
+                if nextStop[1] + cost < result:
+                    queue.append((nextStop[0], nextStop[1] + cost))
+
+        if step
+
+
+def sparseMatrixMutiply(A, B)
+
+    m = len(A)
+    k_size = len(A[0])
+    n = len(B[0])
+
+    for i in range(m):
+        for k in range(k_size):
+            if A[i][k] == 0
+            for j in range(n):
+                C[i][j] += A[i][k] * B[k][j]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class minStack(object):
+
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+
+    def push():
+        pass
+
+    def getMin():
+
+        if len(stack1) == 0:
+            stack1.push
+
+
+
+
+def calculator(self, s):
+
+
+    stack = []
+
+    sign = 1
+    res = 0
+    i = 0
+
+    while i < len(s)
+
+        if nums[i].isdigit():
+            num = int(s[i])
+            while i + 1 < nums.length and s[i+1].isdigit():
+                num = num * 10 + int(s[i + 1])
+                i += 1
+            res += num * sign
+        elif s[i] == '+':
+            sign = 1
+        elif s[i] == '-':
+            sign = -1
+        elif s[i] == '(':
+            stack.append(res)
+            stack.append(sign)
+            res = 0
+            res - 1
+        elif s[i] == ')':
+            res = res * stack.pop() + stack.pop()
+
+        i += 1
+    return res
+
+
 # longest consecutive sequence
 
-# dp[i] means in the position i-1 the length of longest consecutive subsequence
+# dp[i] means in the position i-1 the length of longest consecutive
+
+
+class Node(object):
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+
+
+class LRUCache(object):
+    def __init__(self, capacity)
+        self.dic = {}
+        self.capacity = capacity
+        self.head = Node(0, 0)
+        self.tail = Node(0, 0)
+        self.head.next = tail
+        self.tail.next = head
+
+    def _addToHead(node):
+        nextHeadNode = self.prev.next
+        self.prev.next = node
+        node.prev = self.prev
+        node.next = nextHeadNode
+        nextHeadNode.prev = node
+
+    def _remove(node):
+        prevNode = node.prev
+        nextNode = node.next
+        prevNode.next = nextNode
+        nextNode.prev = prevNode
+
+    def get(key):
+        if key in dic:
+            node = dic[key]
+            self._remove(node)
+            self._addToHead(node)
+            return node.val
+        else:
+            return -1
+
+    def put(key, value):
+
+        if key in dic:
+            self._remove(dic[key])
+
+        node = Node(key,value)
+        self.dic[key] = node
+        self._addToHead(node)
+
+        if len(dic) > capacity:
+            node = self.dic[n.key]
+            self._remove(self.tail.prev)
+            del(self.dic[n.key])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    def put(key, value):
+
+
+def houseRobber(self, nums):
+
+    if len(nums) == 1:
+        return nums[0]
+
+    n = len(nums)
+    dp = [0] * n
+
+    dp[0], dp[1] = 0, nums[1]
+
+    for i in range(2, len(nums)):
+        dp[i] = max(dp[i-2] + nums[i], dp[i-1])
+
+    answer = dp[n-1]
+
+    dp[0] = nums[0]
+    dp[1] = 0
+    for i in range(2, len(nums)):
+        dp[i] = max(dp[i-2] + nums[i], dp[i-1])
+
+    return max(dp[n-2], answer)
 
 
 
@@ -95,7 +436,19 @@ def maxBinarySearchTree(self, root):
 
         reru
 
+class Node(object):
+    def __init__(self, key, value):
+        self.value = value
+        self.key = key
+        self.prev = None
+        self.next = None
 
+
+
+class LRUCache(object)
+
+    def __init__(self, capacity, )
+        self.
 
 
 
