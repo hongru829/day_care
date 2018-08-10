@@ -10,20 +10,20 @@
 # Testcase Example:  '[1,2,5,3,4,null,6]'
 #
 # Given a binary tree, flatten it to a linked list in-place.
-# 
+#
 # For example, given the following tree:
-# 
-# 
+#
+#
 # ⁠   1
 # ⁠  / \
 # ⁠ 2   5
 # ⁠/ \   \
 # 3   4   6
-# 
-# 
+#
+#
 # The flattened tree should look like:
-# 
-# 
+#
+#
 # 1
 # ⁠\
 # ⁠ 2
@@ -35,8 +35,8 @@
 # ⁠       5
 # ⁠        \
 # ⁠         6
-# 
-# 
+#
+#
 #
 # Definition for a binary tree node.
 # class TreeNode(object):
@@ -45,6 +45,8 @@
 #         self.left = None
 #         self.right = None
 
+# 自己在走例子的时候，突然卡住了 对于 dfs遍历到 node = 4的时候 不知道如何将
+# 4 和 5 连在一起了 走到 4的时候 prev = 右边的第一个节点 所以 将他们联系到一起了
 class Solution(object):
     def __init__(self):
         self.prev = None
@@ -57,9 +59,9 @@ class Solution(object):
             return
         self.flatten(root.right)
         self.flatten(root.left)
-        
+
         root.right = self.prev
         root.left = None
         self.prev = root
 
-        
+
