@@ -1,5 +1,112 @@
 
 
+#Pacific Atlantic Water Flow
+
+
+def pacificAtlantic(self, matrix):
+
+    m = len(matrix)
+    n = len(matrix[0])
+
+    p_visited = [[False for _ in range(n)] for _ in range(m)]
+    a_visited = [[False for _ in range(n)] for _ in range(n)]
+
+    for i in range(m):
+        bfs(matrix, m, n, i, 0, p_visited)
+        bfs(matrix, m, m, i, n-1, a_visited)
+
+    for j in range(n):
+        bfs(matrix, m, n, 0 , j, p_visited)
+        bfs(matrix, m, n, m - 1, j, a_visited)
+
+    res = []
+    for i in range(m):
+        for j in range(n):
+            if p_visited[i][j] and a_visited[i][j]:
+                res.append([i, j])
+    return res
+
+
+    def bfs(matrix, m, n, i, j, visited):
+
+        queue = []
+        queue.append([i, j])
+        directions = [[0,1], [0, -1], [-1, 0], [-1, 0]]
+        while queue:
+            size = len(queue)
+            for i in range(size):
+                nextPointX, nextPointY = queue.pop(0)
+                for d in directions:
+                    x = d[0] + nextPointX
+                    y = d[1] + nextPointY
+                    if x < 0 or x >= m or y >= n and y < 0 or visited[x][y] == True or matrix[nextPointX][nextPointY] > matrix[x][y]:
+                        continue
+                    else:
+                        queue.append((x, y))
+                        visited[x][y] = True
+
+
+
+
+
+
+
+
+
+
+    def altanicDfs(matrix, m ,n, i, j, a_visited):
+
+        if i >= m and i < 0 and j >= n and j < 0
+
+
+
+
+
+
+
+routes = [[1,2,3],[2,6,7]]
+
+
+# Example:
+# Input:
+# routes = [[1, 2, 7], [3, 6, 7]]
+# S = 1
+# T = 6
+# Output: 2
+# Explanation:
+
+def busRoutes(self, routes, S, T):
+
+    stopToBus = {}
+
+    for i in range(len(routes)):
+        for stop in routes[i]:
+            if stop not in stopToBus:
+                stopToBus[stop] = [i]
+            else:
+                stopToBus[stop].append(i)
+
+    queue = []
+    queue.append(S)
+    count = 0
+    visited = set()
+    while queue:
+        size = len(queue)
+        for k in range(size):
+            nextStop = queue.pop(0)
+            busList = stopToBus[nextStop]
+            if busList is None:
+                continue
+            for bus in busList:
+                for stop in routes[bus]:
+                    if stop == T:
+                        return count
+                    queue.append(stop)
+                    visited.add(stop)
+        count += 1
+    return -1
+
+
 
 def busRoutes(self, routes, S, T):
 
