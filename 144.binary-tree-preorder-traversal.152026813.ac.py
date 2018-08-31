@@ -10,22 +10,22 @@
 # Testcase Example:  '[1,null,2,3]'
 #
 # Given a binary tree, return the preorder traversal of its nodes' values.
-# 
+#
 # Example:
-# 
-# 
+#
+#
 # Input: [1,null,2,3]
 # ⁠  1
 # ⁠   \
 # ⁠    2
 # ⁠   /
 # ⁠  3
-# 
+#
 # Output: [1,2,3]
-# 
-# 
+#
+#
 # Follow up: Recursive solution is trivial, could you do it iteratively?
-# 
+#
 #
 # Definition for a binary tree node.
 # class TreeNode(object):
@@ -43,7 +43,7 @@ class Solution(object):
         res = []
         return self.iterative_preorder(root, res)
 
-    
+
     def iterative_preorder(self, root, res):
         stack = []
         while root or stack:
@@ -52,7 +52,8 @@ class Solution(object):
                 stack.append(root)
                 root =  root.left
             else:
+
                 root = stack.pop()
                 root = root.right
         return res
-        
+

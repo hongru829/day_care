@@ -23,14 +23,15 @@ Clone Graph 这一道题我在用bfs做的时候, 考虑到需要创建一个que
 
 <h2>Yahoo Champion</h2>
 
-Longest Rerepeated Substring
+Longest Rerepeated Substr
+ing
 
 <h2>Rubrik </h2>
 
 [5,5,0,3,0,9]
 -> 14
 GOAL: to pick elements from array and return the greatest sum possible CONSTRAINTS
-1. You cannot pick adjacent elements 
+1. You cannot pick adjacent elements
 2. You must pick elements that are increasing from left to right
 
 
@@ -47,7 +48,7 @@ def getMaxSum(self, num):
 	for i in range(len(nums)):
     	for j in range(i - 1):
         	if nums[j] > nums[i]
-        	
+
 
 
 def getMaxSum(self, nums)
@@ -74,6 +75,21 @@ def getMaxSum(self, nums)
 
     return max(dp)
 ```
+
+
+4sum 3sum的问题
+
+比较值得注意的是, i, j, left, right 是怎么设定的
+
+for i in range(len(nums))
+    for j in range(i+1, len(nums))
+
+        left = j + 1
+        right = len(nums) - 1
+        while left  < right
+
+
+
 
 
 

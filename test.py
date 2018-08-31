@@ -1,3 +1,480 @@
+# beginWord = "hit",
+# endWord = "cog",
+# wordList = ["hot","dot","dog","lot","log","cog"]
+
+
+
+def calculate(nums):
+
+    numStack = []
+    opStack = []
+
+    while i < len(nums):
+
+        if nums[i].isdigit():
+            num = int(nums[i])
+            while i + 1 < len(nums) and nums[i+1].isdigit():
+                num = num * 10 + nums[i+1].isdigit()
+                i += 1
+            numStack.append(num)
+
+        elif nums[i] == '(':
+            opStack.append(nums[i])
+        elif nums[i] == ')':
+            while (opStack.peek() != '(') {
+              nums.push(operation(ops.pop(), nums.pop(), nums.pop()))
+            }
+        elif nums[i] == '+' or nums[i] == '-' or nums[i] == '/' or nums[i] == '*':
+            while (!ops.isEmpty() && precedence(c, ops.peek()))
+                nums.push(operation(ops.pop(), nums.pop(),nums.pop()));
+            ops.push(c);
+
+    while not ops.isEmpty()
+        nums.append(operation(ops.pop(), nums.pop(), nums.pop()))
+
+    return nums.pop()
+
+
+    private static int operation(char op, int b, int a) {
+        switch (op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return a / b; // assume b is not 0
+        }
+        return 0;
+    }
+    // helper function to check precedence of current operator and the uppermost operator in the ops stack
+    private static boolean precedence(char op1, char op2) {
+        if (op2 == '(' || op2 == ')') return false;
+        if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-')) return false;
+        return true;
+    }
+}
+
+
+
+
+def basicCalculatorII(nums):
+
+    operator = '+'
+    num = 0
+
+    while i < len(nums):
+
+        if nums[i].isdigit():
+            num = int(nums[i])
+            while i + 1 < len(nums) and nums[i+1].isdigit():
+                num = num * 10 + int(nums[i+1])
+                i += 1
+
+        if not nums[i].digit() and s[i]:
+
+            if operator == '+':
+                stack.append(num)
+
+            elif operator == '-':
+                stack.append(-num)
+
+            elif operator == '*':
+                stack.append(stack.pop() * num)
+
+            elif operator == '/':
+                stack.append(float(stack.pop()/ nums))
+
+            operator = nums[i]
+        i += 1
+    return sum(stack)
+
+
+
+
+
+
+
+def basicCalculator(nums):
+
+    operator = '+'
+    num = 0
+    res = 0
+    while i < len(nums):
+
+        if nums[i].isdigit():
+            num  = int(nums[i])
+            while i + 1 < len(nums) and nums[i+1].isdigit():
+                num = num * 10 + int(nums[i+1])
+                i += 1
+            res = num * sign
+
+        elif nums[i] == '+':
+            sign = 1
+
+        elif nums[i] == '-':
+            sign = -1
+
+        elif nums[i] == '(':
+            stack.append(res)
+            stack.append(sign)
+            res = 0
+            sign = 1
+        elif s[i] == ')':
+            res = res * stack.pop() + stack.pop()
+        i += 1
+        return res
+
+
+
+
+
+def binaryTreeInorderTraversal(root):
+
+
+    stack = []
+    stack.append(root)
+
+    while stack or root
+
+        if root:
+            root = root.left
+            stack.append(root)
+
+        else stack:
+            root = stack.pop()
+            res.append(root.val)
+            root = root.right
+
+    return res
+
+class Node(object):
+
+    def __init__(key, value):
+        self.key = key
+        self.value = value
+        self.next = None
+        self.prev = None
+        self.child = None
+
+
+def flattenMutiplList(root):
+
+    stack = []
+    stack.append(root)
+
+    while stack:
+
+        node = stack.pop();
+
+        prev.next = node
+        node.prev = prev
+
+
+        if node.next:
+            stack.append(node.next)
+            node.next = None
+
+        if node.child:
+            stack.append(node.child)
+            node.child = None
+
+        prev = node
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def removeRedunantConnection(self, edges):
+
+    parents = [0] * (len(edges) + 1)
+    sizes = [1] * (len(edges) + 1）
+
+    def find(u):
+        while p[u] != u:
+            p[u] = p[p[u]]
+            u = p[u]
+        return u
+
+    for u, v in edges:
+        if p[u] == 0:
+            p[u] = u
+        if p[v] == 0:
+            p[v] = v
+
+
+        if p[u] == p[v]:
+            return [u, v]
+
+
+def isValidBST(root, leftBoundary, rightBoundry):
+
+
+
+
+def helper(root, leftBoundary, rightBoundry):
+
+
+
+    helper(root.left, leftBoundry, root.val)
+    if leftBoundary != None and root.val <= leftBoundary:
+        return False
+    if rightBoundry != None and root.val >= rightBoundary:
+        return False
+    helper(root.right, root.val, rightBoundry)
+    return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+def binarypathSum(root)
+
+    if root is None:
+        return 0, 0
+
+
+
+
+    leftBranchSum, maxLeftSum = dfs(root.left)
+    rightBranchSum, maxRightSum = dfs(root.right)
+
+
+
+    return max(leftBrancSum + root.val, rightBrachSum + root.val, root.val), max(leftBrancSum + root.val, rightBrachSum + root.val, leftBrancSum + root.val + rightBranchSum)
+
+
+
+
+
+
+
+
+#leetcode 129 sum root to leaf numbers
+
+# clone graph
+
+
+def wordBreak(s, wordDict):
+
+    dp = [0]* len(s)
+
+    for i in range(1, len(dp) + 1):
+        for j in range(i):
+            if dp[j] == True and s[j:i] in wordDict:
+                dp[i] = True
+
+    return dp[len(s)]
+
+
+ def preorderTraversal(node):
+
+    res = []
+    stack = [node]
+
+    if node is None：
+        return res
+
+    while len(stack) == 0 or root:
+
+        root = stack.pop()
+        res.append(root.val)
+        root = root.left
+        stack.append(root)
+
+        if root is None:
+            root = root.right
+            stack.append(root)
+
+    return res
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Testcase Example:  '[["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]'
+#
+# Given a 2D board containing 'X' and 'O' (the letter O), capture all regions
+# surrounded by 'X'.
+#
+# A region is captured by flipping all 'O's into 'X's in that surrounded
+# region.
+#
+# Example:
+#
+#
+# X X X X
+# X O O X
+# X X O X
+# X O X X
+#
+#
+# After running your function, the board should be:
+#
+#
+# X X X X
+# X X X X
+# X X X X
+# X O X X
+#
+#
+# Explanation:
+#
+# Surrounded regions shouldn’t be on the border, which means that any 'O' on
+# the border of the board are not flipped to 'X'. Any 'O' that is not on the
+# border and it is not connected to an 'O' on the border will be flipped to
+# 'X'. Two cells are connected if they are adjacent cells connected
+# horizontally or vertically.
+
+
+
+def surroundRegion(matrix):
+
+
+    m = len(matrix)
+    n = len(matrix[0])
+
+    for i in range(m):
+
+        if matrx[i][0] == 'O':
+            dfs(matrix, i, 0, m, n)
+        if matrix[i][n-1] == 'O':
+            dfs(matrix, i, n-1, m, n)
+
+    for j in range(n):
+
+        if matrix[0][j] == 'O':
+            dfs(matrix, 0, j, m, n)
+
+        if matrix[m-1][j] == 'O':
+            dfs(matrix, 0, )
+
+    def dfs(matrix, i, j, m, n):
+
+        matrix[i][j] == '#'
+        dir = [[0, 1], [0, -1], [-1, 0], [1, 0]]
+        if i < 0 or j < 0 or i >= m or j >= n:
+            return False
+
+        for d in dir:
+            x = i + d[0]
+            y = j + d[1]
+            dfs(matrix, x, y, m, n)
+
+
+
+
+
+def rootToleafNumbers(root):
+
+    def helper(root, sum, res):
+
+        if root is None:
+            return
+
+        if root.left is None and root.right is None:
+            levelSum += root.val
+
+        levelSum += root.val
+        helper(root.left, levelSum * 10)
+        helper(root.right, levelSum * 10)
+
+
+
+def wordLadder(startWord, endWord, wordDict):
+
+    queue = [startWord]
+
+    step = 0
+    while queue:
+        size = len(queue)
+        step += 1
+        for k in range(size):
+            nextWord = queue.pop(0)
+
+            if nextWord == endWord:
+                return step + 1
+            for i in range(len(nextWord)):
+                for c in 'abcedfjhijklmnopqrstuvwxyz':
+                    updatedWord = nextWord[:i] + c + nextWord[i+1:]
+                    if updatedWord not in visited:
+                        visited.append(updatedWord)
+                        queue.append(updatedWord)
+    return -1
+
+
+def longestConsectiveSubsue:
+
+    numSet = set(nums)
+
+    for i in range(len(nums))
+        if nums[i] - 1 not in nums:
+            current_steak = 1
+            current_num = nums[i]
+
+            while current_num + 1 in numsSet:
+                current_steak += 1
+                current_num = current_num + 1
+
+            longest = max(longest,current_steak)
+    return longest
+
+
+
+
+
+
+def pathSumIII (root):
+
+    def pathSum(root, target):
+
+        if root is None:
+            return 0
+        else:
+            return pathSumHelper(root, target) + pathSumHelper(root.left) + pathSumHelper(root.right)
+
+
+    def pathSumhelper(root, target, count)
+
+        if root is None or target < 0:
+            return
+
+        if target == 0:
+            count[0] += 1
+
+        pathSumhelper(root.left, target - root.val)
+        pathSumhelper(root.right, target -  root.val)
+        return count[0]
+
 
 
 #Pacific Atlantic Water Flow
