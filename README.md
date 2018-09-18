@@ -23,8 +23,13 @@ Clone Graph 这一道题我在用bfs做的时候, 考虑到需要创建一个que
 
 <h2>Yahoo Champion</h2>
 
-Longest Rerepeated Substr
-ing
+Longest Rerepeated Substring
+
+<h2> bfs 求最短路径 </h2>
+有个疑问就是,distance是在哪里加, 应该是for循环一层queue结束后加,
+本来是加在循环四个direction的方向上, 这样想想都不对, distance是
+相对于while循环的全局变量, 如果每次走四个方向的时候 都++的话，distance就变得非常大了
+
 
 <h2>Rubrik </h2>
 
@@ -89,12 +94,8 @@ for i in range(len(nums))
         while left  < right
 
 
-
-
-
-
-
 ```
 public
 
 ```
+
