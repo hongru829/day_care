@@ -2,6 +2,260 @@
 # endWord = "cog",
 # wordList = ["hot","dot","dog","lot","log","cog"]
 
+public void calculator(String s) {
+
+    int i = 0
+
+    while (i < s.length()) {
+        if (Character.isDigitOrLetter()) {
+
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+# sealize and desealize BST
+
+def sealize(root):
+
+    vals = []
+
+    def sealizeHelper(node, vals):
+
+        if node is None:
+            return None
+
+        vals.append(node.val)
+        sealizeHelper(node.left, vals)
+        sealizeHelper(node.right, vals)
+
+    sealizeHelper(root,vals)
+    return " ".join(vals)
+
+def desealize(root, data):
+
+    vals = data.split(" ")
+
+    def desealizeHelper(minVal, maxVal, vals):
+
+        if min < vals[0] < max:
+            value = vals.popleft()
+            node = Node(value)
+            node.left = desealizeHelper(minVal, value, vals)
+            node.right = desealizeHelper(value, maxValue, vals)
+            return node
+        else:
+            return None
+    vals = Collections.deque([for val in range(len(vals))]
+
+    desealizeHelper(root, vals)
+
+# sealize and desealize N-ary
+
+class sealizeAndDesralizeNAryTree:
+
+    def sealizeNaryTree(root, value):
+
+        vals = []
+        def sealizeHelper(node, vals):
+            if root is None:
+                return None
+
+            for children in node.children:
+                vals.append(node.value)
+                sealizeHelper(node.left, vals)
+            vals.append('#')
+        return ','.join(vals)
+
+    #         1
+    #     2       3
+    # 4   5  6
+    # after sealize
+    # 1,2,4,#,5,#,6, #, #, 3, #, #
+
+
+
+
+# 1
+# 递归第二层 desealizeHelper(2 childrenNode)                                                                                                                                                                                                                            vals[0] == '#':
+# 递归第三层 desealizeHelper(4 childrenNode of 2)     desealizeHelper(5 childrenNode of 2)                                           desealizeHelper(6 childrenNode of 2)          vals[0] == '#': -
+#       vals[0] == '#':                                  |                          | vals[0] == '#':                                | vals[0] == '#':
+#           vals.popleft() --> 返回上一层递归 进入while循环 -                           —— vals.popleft() --> 返回上一层递归 进入while循环 -    vals.popleft() --> 返回上一层递归 进入while循环 -
+
+
+
+    def desealize(node, data):
+
+        vals = data.split(",")
+        def desealizeHelper(vals):
+            node = Node(vals.popleft())
+
+            while vals[0] != '#':
+                value = vals.popleft()
+                childrenNode = Node(value)
+                node.children.append(childNode)
+                desealizeHelper(childrenNode)
+
+            vals.popleft()
+
+
+
+
+
+
+
+
+
+    def desealizeNaryTree(root, value):
+
+
+
+
+class sealizeBST
+
+    def sealize(root)
+
+        vals = []
+
+        def sealizeHelper(node):
+            if not node:
+                return None
+
+            vals.append(node.val)
+            sealizeHelper(root.left)
+            sealizeHelper(root.right)
+
+        sealizeHelper(root)
+        return ' '.join(vals)
+
+    def desealize(root, data):
+
+        nodes = vals.split(" ")
+
+        def desealizeHelper(min, max, vals)
+
+            queue = [root]
+            index = 1
+
+            while queue:
+                node = queue.pop(0)
+
+                if min < vals[0] < max:
+                    val = vals[0]
+
+                    node.left = desealizeHelper
+
+
+def minimumPathSum(matrix):
+
+    m = len(matrix)
+    n = len(matrix[0])
+
+    dp = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))]
+
+    dp[0][0] = matrix[0][0]
+
+    for i in range(1, len(dp)):
+        dp[i][0] = dp[i-1][0] + matrix[0][]
+
+    for i in range(1, len(dp)):
+        for j in range(1, len(dp[0])):
+            dp[i][j] = min(dp[i-1][j] + matrix[i-1][j], dp[i][j-1] + matrix[i][j-1])
+
+    return dp[-1][-1]
+
+
+def uniquePath(self, matrix):
+
+    dp = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))]
+
+    m = len(dp)
+    n = len(dp[0])
+
+    for i in range(len(matrix)):
+        dp[i][0] = 1
+
+    for i in range(len(matrix[0])):
+        dp[0][j] = 1
+
+
+    for i in range(1, len(matrix)):
+        for j in range(1, len(matrix)):
+            dp[i][j] = dp[i-1][j] + dp[i][j-1]
+
+    return dp[m-1][n-1]
+
+
+
+
+
+
+
+
+
+def possibleBipartition(self, N, dislikes):
+
+    graph = Collections.defaultdict(list)
+
+    for u, v in dislikes:
+        graph[u].append(v)
+        graph[v].append(u)
+
+    color = {}
+
+    def dfs(node, c = 0):
+        if node in dic:
+            return color[node] == color
+        for nei in graph[node]:
+            if not dfs(nei, c^1):
+                return False
+        return True
+
+
+
+
+
+def mergeTwoArray(nums1, nums2):
+
+    res = []
+    i, j = 0, 0
+
+    while i < len(nums1) and j < len(nums2):
+
+        if i < len(nums1):
+            result.append(nums1[i])
+            i += 1
+
+        if j < len(nums2):
+            result.append(nums2[j])
+            j += 1
+
+    if i < len(nums[i])
+        result += nums[i:]
+
+    if j < len(nums[j])
+        result += nums[j:]
+
+
+ def mergeSort(nums):
+
+    if len(nums) <= 1:
+        return nums
+
+    mid = len(nums) / 2
+
+    left = mergeSort(nums[:mid])
+    right = mergeSort(nums[mid:])
+
+    return mergeTwoArray(left, right)
+
 
 
 def calculate(nums):
